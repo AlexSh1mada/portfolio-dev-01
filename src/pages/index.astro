@@ -3,14 +3,20 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import SocialsPill from '../components/icons/SocialsPill.astro';
+import GitHubIcon from '../components/icons/GitHub.astro';
+import MailIcon from '../components/icons/Mail.astro';
+import Experience from '../components/Experience.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Alex Buenrostro's Web Portfolio"
+		description="Web portfolio creado con Astro y Tailwind CSS, contacta a Alex para trabajar contigo :)"
+>
 	<main>
 		<section class="w-full mx-auto lg:w-[740px] py-44">
 			<div class="flex items-center gap-4 pb-4">
 				<img 
-				class="rounded-full w-12 h-12 mb-4"
+				class="rounded-full size-12 mb-4"
 				src="https://avatars.githubusercontent.com/u/40413250?v=4" 
 				alt="github profile pic" 
 				/>
@@ -30,14 +36,24 @@ import LinkedInIcon from '../components/icons/LinkedIn.astro';
 				modern and responsive</span> web applications. 
 			</h2>
 
-			<ul>
-				<li>
-					<a href="https://www.linkedin.com/in/alex-buentostro/">
-						<LinkedInIcon class="w-6 h-6"/>
+			<nav class="flex gap-x-2">
+				<SocialsPill href="https://www.linkedin.com/in/alex-buentostro/">
+					<LinkedInIcon class="size-6"/>
 						LinkedIn
-					</a>
-				</li>
-			</ul>
+				</SocialsPill>
+				<SocialsPill href="https://github.com/AlexSh1mada">
+					<GitHubIcon class="size-6"/>
+						GitHub
+				</SocialsPill>
+				<SocialsPill href="">
+					<MailIcon class="size-6"/>
+						alexbuerom@gmail.com
+				</SocialsPill>
+			</nav>
+		</section>
+
+		<section>
+			<Experience />
 		</section>
 	</main>
 </Layout>
