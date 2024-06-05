@@ -1,10 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro';
 ---
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Portfolio</h1>
+		<section class="w-full mx-auto lg:w-[740px] py-44">
+			<div class="flex items-center gap-4 pb-4">
+				<img 
+				class="rounded-full w-12 h-12 mb-4"
+				src="https://avatars.githubusercontent.com/u/40413250?v=4" 
+				alt="github profile pic" 
+				/>
+				<h1 class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-4">
+					Hello, I'm Alex <a 
+						href="https://www.linkedin.com/in/alex-buentostro/"
+						target="_blank"
+						rel="noopener"
+						class="flex justify-center items-center">
+						<Badge>Available for hire</Badge>
+									</a>
+				</h1>
+			</div>
+			<h2 class ="text-2xl text-wrap">
+				A <span class="text-yellow-200">Jr. Software Developer</span> based in Colima, Mexico.
+				Currently focused on web development, creating <span class="bg-gradient-to-r from-purple-400 via-pink-4	00 to-indigo-400 text-transparent bg-clip-text">powerful,
+				modern and responsive</span> web applications. 
+			</h2>
+		</section>
 	</main>
 </Layout>
