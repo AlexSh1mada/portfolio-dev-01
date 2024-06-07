@@ -1,4 +1,5 @@
-<header class="flex justify-center items-center py-3 w-full xl:w-[1120px] mx-auto">
+<header class="flex justify-center items-center py-6 w-full xl:w-[1120px] mx-auto"
+id="header-nav">
 
     <nav class="flex flex-row gap-x-10 opacity-80">
         <a href="#top">Home</a>
@@ -7,4 +8,38 @@
         <a href="#about-me">About me</a>
         <a href="#contact">Contact</a>
     </nav>
+
+    <div
+        id="menu-backdrop"
+        class="absolute bg-slate-700/70 backdrop-blur-sm rounded-lg 
+        translate-x-[var(--left)] top-[var(--top)]
+        left-0
+        w-[var(--width)] h-[var(--height)]
+        tansition-all duration-300
+        ease-in-out opacity-0 -z-10">
+    </div>
 </header>
+
+<script>
+    const anchorItem = document.querySelectorAll('#header-nav a')
+    const menuBackDrop = document.querySelector('#menu-backdrop') as HTMLElement
+
+    anchorItem.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            const { left, top, width, height } = item.getBoundingClientRect();
+            const padding = 6;
+
+            menuBackDrop.style.setProperty("--left", `${left - padding }px`); 
+            menuBackDrop.style.setProperty("--top", `${top - padding }px`); 
+            menuBackDrop.style.setProperty("--width", `${width + padding * 2}px`); 
+            menuBackDrop.style.setProperty("--height", `${height + padding * 2}px`); 
+            menuBackDrop.style.opacity = "1"
+            menuBackDrop.style.visibility = "visible"
+        })
+
+        item.addEventListener("mouseleave", () => {
+            menuBackDrop.style.opacity = "0"
+            menuBackDrop.style.visibility = "hidden"
+        })
+    })
+</script>

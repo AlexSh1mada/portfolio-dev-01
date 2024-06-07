@@ -4,6 +4,7 @@ import JavaScriptIcon from "./icons/JavaScript.astro";
 import CSSIcon from "./icons/CSS.astro";
 import TailwindIcon from "./icons/Tailwind.astro";
 
+/* border-2 border-blue-400 */
 
 const TAGS = {
     HTML: {
@@ -18,7 +19,7 @@ const TAGS = {
     },
     CSS: {
         name: "CSS",
-        class: "bg-[#003159] text-white",
+        class: "bg-[#003159] text-white", 
         icon: CSSIcon
     },
     Tailwind: {
@@ -49,7 +50,7 @@ const PROJECTS = [
 			<ul class="flex gap-x-4 flex-row">
 				{tags.map((tag) => (
 					<li>
-                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-4`}>
                             <tag.icon class="size-4"/>
                             {tag.name}
                         </span>
