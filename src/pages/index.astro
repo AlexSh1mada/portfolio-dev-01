@@ -1,27 +1,29 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Badge from '../components/Badge.astro';
-import LinkedInIcon from '../components/icons/LinkedIn.astro';
-import BriefcaseIcon from '../components/icons/Briefcase.astro';
-import SocialsPill from '../components/icons/SocialsPill.astro';
-import GitHubIcon from '../components/icons/GitHub.astro';
-import MailIcon from '../components/icons/Mail.astro';
-import Experience from '../components/Experience.astro';
-import SectionContainer from '../components/SectionContainer.astro'
-import ToolsIcon from '../components/icons/Tools.astro';
-import Projects from '../components/Projects.astro';
-import DownloadIcon from '../components/icons/Download.astro';
+import Layout from '@/layouts/Layout.astro';
+import Badge from '@/components/Badge.astro';
+import LinkedInIcon from '@/components/icons/LinkedIn.astro';
+import BriefcaseIcon from '@/components/icons/Briefcase.astro';
+import SocialsPill from '@/components/icons/SocialsPill.astro';
+import GitHubIcon from '@/components/icons/GitHub.astro';
+import MailIcon from '@/components/icons/Mail.astro';
+import Experience from '@/components/Experience.astro';
+import SectionContainer from '@/components/SectionContainer.astro'
+import ToolsIcon from '@/components/icons/Tools.astro';
+import Projects from '@/components/Projects.astro';
+import DownloadIcon from '@/components/icons/Download.astro';
+import AboutMeIcon from '@/components/icons/UserID.astro';
+import AboutMe from '@/components/AboutMe.astro';
+
 ---
 
 <Layout title="Alex Buenrostro's Web Portfolio"
 		description="Web portfolio creado con Astro y Tailwind CSS, contacta a Alex para trabajar contigo :)"
 >
 	<main class="px-10">
-		<SectionContainer class="py-44 pb-24">
-			<div class="flex items-center gap-4 pb-4">
+		<SectionContainer class="py-28 pb-24">
+			<div class="flex items-center gap-4 pb-6">
 				<img 
-				class="rounded-full size-12 mb-4"
+				class="rounded-full size-12 mb-6"
 				src="https://avatars.githubusercontent.com/u/40413250?v=4" 
 				alt="github profile pic" 
 				/>
@@ -36,13 +38,13 @@ import DownloadIcon from '../components/icons/Download.astro';
 									</a>
 				</h1>
 			</div>
-			<h2 class ="text-xl lg:text-2xl text-wrap max-w-[700px] pb-6">
+			<h2 class ="text-xl lg:text-2xl text-pretty max-w-[700px] pb-8">
 				A <span class="text-yellow-200">Jr. Software Developer</span> based in Colima, Mexico.
 				Currently focused on Frotend development, creating <span class="bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 text-transparent bg-clip-text">powerful,
 				modern and responsive</span> web applications. 
 			</h2>
 
-			<nav class="flex gap-2 flex-wrap">
+			<nav class="flex gap-2 flex-wrap pb-10">
 				<SocialsPill href="https://www.linkedin.com/in/alex-buentostro/">
 					<LinkedInIcon class="size-4 md:size-6"/>
 						LinkedIn
@@ -61,21 +63,39 @@ import DownloadIcon from '../components/icons/Download.astro';
 				</SocialsPill>
 			</nav>
 		</SectionContainer>
+
 <!--Begins Experience Section -->
-		<SectionContainer id="experience">
+
+		<SectionContainer id="experience" class= "pt-10">
 			<h2 class="text-base font-semibold mb-8 flex gap-x-2 ml-2 items-center">
 				Work experience
 				<BriefcaseIcon class="size-6"/>
 			</h2>
 			<Experience />
 		</SectionContainer>
+
 <!-- Ends Experience Section 😢 -->
+
+<!-- Begins Projects Section    -->
+
 		<SectionContainer id="projects">
 			<h2 class="text-base font-semibold mb-8 flex gap-x-2 ml-2 items-center">
 				Projects
 				<ToolsIcon class="size-6"/>
 			</h2>
 			<Projects />
+		</SectionContainer>
+
+<!-- Ends Projects Section     -->
+
+<!-- Begins About Me Section   -->
+
+		<SectionContainer id="about-me" class= "pt-10">
+			<h2 class="text-3xl font-semibold mb-8 flex gap-x-2 ml-2 items-center">
+				About me
+				<AboutMeIcon class="size-10 ml-2"/>
+			</h2>
+			<AboutMe />
 		</SectionContainer>
 	</main>
 </Layout>
