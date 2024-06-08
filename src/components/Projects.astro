@@ -3,6 +3,9 @@ import HTMLIcon from "./icons/HTML.astro";
 import JavaScriptIcon from "./icons/JavaScript.astro";
 import CSSIcon from "./icons/CSS.astro";
 import TailwindIcon from "./icons/Tailwind.astro";
+import LinkButton from "./LinkButton.astro";
+import GitHub from "./icons/GitHub.astro";
+import EyeIcon from "./icons/Eye.astro";
 
 /* border-2 border-blue-400 */
 
@@ -43,7 +46,7 @@ const PROJECTS = [
 ---
 
 {
-	PROJECTS.map(({ image, title, description, tags }) => (
+	PROJECTS.map(({ image, title, description, tags, link, github }) => (
 		<article>
 			<h3 class="text-xl font-semibold text-orange-400 mb-2">{title}</h3>
 			<p class="mb-4">{description}</p>
@@ -62,6 +65,16 @@ const PROJECTS = [
 				src={image}
 				alt={`Screenshot from the project ${image}`}
 			/>
+            <footer class="flex gap-x-3 justify-center mt-3">
+                <LinkButton href={ github }>
+                    Code 
+                    <GitHub class="size-6 ml-1" />
+                </LinkButton>
+                <LinkButton href={ link }>
+                    Demo
+                    <EyeIcon class="ml-1" />
+                </LinkButton>
+            </footer>
 		</article>
 	))
 }
