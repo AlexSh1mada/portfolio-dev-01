@@ -10,71 +10,87 @@ import EyeIcon from "./icons/Eye.astro";
 /* border-2 border-blue-400 */
 
 const TAGS = {
-    HTML: {
-        name: "HTML",
-        class: "bg-[#8a4529] text-white",
-        icon: HTMLIcon
-    },
-    JavaScript: {
-        name: "JavaScript",
-        class: "bg-[#8f8232] text-white",
-        icon: JavaScriptIcon
-    },
-    CSS: {
-        name: "CSS",
-        class: "bg-[#003159] text-white", 
-        icon: CSSIcon
-    },
-    Tailwind: {
-        name: "CSS",
-        class: "bg-[#003159] text-white",
-        icon: TailwindIcon
-    }
-}
+	HTML: {
+		name: "HTML",
+		class: "bg-[#8a4529] text-white",
+		icon: HTMLIcon,
+	},
+	JavaScript: {
+		name: "JavaScript",
+		class: "bg-[#8f8232] text-white",
+		icon: JavaScriptIcon,
+	},
+	CSS: {
+		name: "CSS",
+		class: "bg-[#003159] text-white",
+		icon: CSSIcon,
+	},
+	Tailwind: {
+		name: "CSS",
+		class: "bg-[#003159] text-white",
+		icon: TailwindIcon,
+	},
+};
 
 const PROJECTS = [
 	{
 		title: "Monkeytype Clone",
 		description:
-			"A Monkeytype clone application to measure accuracy and typing speed with quick 30 seconds challenges, displaying a random set of words in the screen where the player tries to accurately type said text as fast as possible. This project was great to work on programming logic.",
+			"A Monkeytype clone application to measure accuracy and typing speed. This project was great to work on programming logic.",
 		link: "https://monkeytype.com",
 		github: "#",
 		image: "/public/projects/monkeytype.webp",
-		tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript ],
+		tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
 	},
 ];
 ---
 
-{
-	PROJECTS.map(({ image, title, description, tags, link, github }) => (
-		<article>
-			<h3 class="text-xl font-semibold text-orange-400 mb-2">{title}</h3>
-			<p class="mb-4">{description}</p>
-			<ul class="flex gap-x-4 flex-row">
-				{tags.map((tag) => (
-					<li>
-                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 mb-4`}>
-                            <tag.icon class="size-4"/>
-                            {tag.name}
-                        </span>
-                    </li>
-				))}
-			</ul>
-			<img
-				class="rounded"
-				src={image}
-				alt={`Screenshot from the project ${image}`}
-			/>
-            <footer class="flex gap-x-3 justify-center mt-3">
-                <LinkButton href={ github }>
-                    Code 
-                    <GitHub class="size-6 ml-1" />
-                </LinkButton>
-                <LinkButton href={ link }>
-                    Demo
-                    <EyeIcon class="ml-1" />
-                </LinkButton>
-            </footer>
-		</article>
-	))
-}
+<div class="flex flex-col gap-y-16">
+    {
+      PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+    <div class="w-full md:w-1/2">
+      <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+        <img alt={`Screenshot from the project ${image}`} class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      </div>
+    </div>
+  
+    <div class="w-full md:w-1/2 md:max-w-lg">
+      <h3 class="text-2xl font-bold bg-gradient-to-r from-teal-200 to-yellow-200 text-transparent bg-clip-text">
+        {title}
+      </h3>
+      <div class="flex flex-wrap mt-2">
+        <ul class="flex flex-row mb-2 gap-x-2">
+            {tags.map((tag) => (
+              <li>
+                <span
+                  class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                >
+                  <tag.icon class="size-4" />
+                  {tag.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+  
+        <div class="mt-2 text-gray-400">{description}</div>
+        <footer class="flex items-end justify-start mt-4 gap-x-4">
+            {github && (
+              <LinkButton href={github}>
+                Code
+                <GitHub class="size-4 md:size-6 ml-1" />
+              </LinkButton>
+            )}
+            {link && (
+              <LinkButton href={link}>
+                Preview
+                <EyeIcon class="size-4 md:size-6 ml-1" />
+              </LinkButton>
+            )}
+          </footer>
+      </div>
+    </div>
+  </article>
+      ))
+    }
+  </div>
