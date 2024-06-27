@@ -12,32 +12,61 @@ import EyeIcon from "./icons/Eye.astro";
 const TAGS = {
 	HTML: {
 		name: "HTML",
-		class: "bg-[#8a4529] text-white",
+		class: "bg-purple-900/80 text-purple-400 border border-purple-600",
 		icon: HTMLIcon,
 	},
 	JavaScript: {
 		name: "JavaScript",
-		class: "bg-[#8f8232] text-white",
+		class: "bg-purple-900/80 text-purple-400 border border-purple-600",
 		icon: JavaScriptIcon,
 	},
 	CSS: {
 		name: "CSS",
-		class: "bg-[#003159] text-white",
+		class: "bg-purple-900/80 text-purple-400 border border-purple-600",
 		icon: CSSIcon,
 	},
 	Tailwind: {
 		name: "CSS",
-		class: "bg-[#003159] text-white",
+    class: "bg-purple-900/80 text-purple-400 border border-purple-600",
 		icon: TailwindIcon,
 	},
+  Astro: {
+    name:"Astro",
+    class: "bg-purple-900/80 text-purple-400 border border-purple-600",
+    icon: "#",
+  },
+  React: {
+    name:"React",
+    class: "bg-purple-900/80 text-purple-400 border border-purple-600",
+    icon: "#",
+  },
+  Svelte: {
+    name:"Svelte",
+    class: "bg-purple-900/80 text-purple-400 border border-purple-600",
+    icon: "#",
+  },
+  Typescript: {
+    name:"Typescript",
+    class: "bg-purple-900/80 text-purple-400 border border-purple-600",
+    icon: "#",
+  }
 };
 
 const PROJECTS = [
+{
+		title: "Spotify Clone",
+		description:
+			"Spotify Clone made with Astro, JavaScript, TypeScript and some React and Svelte components.",
+		link: "",
+		github: "https://github.com/AlexSh1mada/spotify-clone",
+		image: "/projects/spotify-clone.webp",
+		tags: [TAGS.Astro, TAGS.Typescript, TAGS.JavaScript, TAGS.React],
+	},
 	{
 		title: "Monkeytype Clone",
 		description:
 			"A Monkeytype clone application to measure accuracy and typing speed. This project was great to work on programming logic.",
-		link: "#",
+		link: "",
 		github: "https://github.com/AlexSh1mada/monkeyTypeCloneApp",
 		image: "/projects/monkeytype.webp",
 		tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
@@ -46,7 +75,7 @@ const PROJECTS = [
 		title: "Weather App",
 		description:
 			"App where you get your location's weather, as well as any other location's.",
-		link: "#",
+		link: "",
 		github: "https://github.com/AlexSh1mada/weatherApp",
 		image: "/projects/weather-app.webp",
 		tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
@@ -55,7 +84,7 @@ const PROJECTS = [
 		title: "Enchanted Emporium",
 		description:
 			"An Ecommerce shopping cart site themed around a Medieval Store ala D&D style, the roleplaying game. ",
-		link: "#",
+		link: "",
 		github: "https://github.com/AlexSh1mada/shoppingCart",
 		image: "/projects/enchanted-emporium.webp",
 		tags: [TAGS.HTML, TAGS.CSS, TAGS.JavaScript],
@@ -84,7 +113,7 @@ const PROJECTS = [
                 <span
                   class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
                 >
-                  <tag.icon class="size-4" />
+                  
                   {tag.name}
                 </span>
               </li>

@@ -1,30 +1,36 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro"
+import ExperienceItem from "./ExperienceItem.astro";
 
-const EXPERIENCE  = [
-    {
-        date: 'January 2023 - March 2023',
-        title: 'Freelance Web Developer',
-        description: 'Designed and created two functioning websites for a local cargo company from start to finish using HTML, CSS (Bulma)  and Javascript, following current design trends and optimizing the page’s content for mobile devices and cross browser performance.',
-        link: '#',
-    },
-    {
-        date: '2024',
-        title: 'My next job with you?',
-        description: 'My next job could be with you!',
-        link: '',
-    }
-]
+const EXPERIENCE = [
+	{
+		date: "2024...",
+		title: "My next job with you?",
+		description: "This could be a great story...",
+		link: "",
+	},
+	{
+		date: "January 2023 - March 2023",
+		title: "Freelance Web Developer",
+		description:
+			'Designed and created the website for a local cargo company, "Comercio Exterior Miral" from start to finish using HTML, CSS (Bulma)  and Javascript, following current design trends and optimizing the page’s content for mobile devices and cross browser performance.',
+		link: "https://www.comerciomiral.com",
+	},
+	{
+		date: "November 2022 - December 2022",
+		title: "Freelance Web Developer",
+		description:
+			'Designed and created the website for a local transporting company, "Alfmer Transportes" from start to finish using HTML, CSS (Bulma)  and Javascript, following current design trends and optimizing the page’s content for mobile devices and cross browser performance.',
+		link: "https://alfmer.com",
+	},
+];
 ---
 
-
-<ol class="relative border-s border-gray-200 dark:border-gray-700">   
-    {
-        EXPERIENCE.map(experience => (
-        <li class="mb-10 ms-4">
-            <ExperienceItem {...experience}/>
-        </li>
-        ))
-    }
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+	{
+		EXPERIENCE.map((experience) => (
+			<li class="mb-10 ms-4">
+				<ExperienceItem {...experience} />
+			</li>
+		))
+	}
 </ol>
-
